@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond bleu République -->
+  <rect width="120" height="80" fill="#000091"/>
+  
+  <!-- Marianne stylisée -->
+  <circle cx="25" cy="25" r="12" fill="white"/>
+  <path d="M25 13 L30 20 L35 13 Z" fill="#E1000F"/>
+  
+  <!-- Texte RÉPUBLIQUE FRANÇAISE -->
+  <text x="45" y="20" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">
+    RÉPUBLIQUE
+  </text>
+  <text x="45" y="32" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">
+    FRANÇAISE
+  </text>
+  
+  <!-- Devise -->
+  <text x="10" y="50" fill="white" font-family="Arial, sans-serif" font-size="6" font-weight="normal">
+    LIBERTÉ
+  </text>
+  <text x="45" y="50" fill="white" font-family="Arial, sans-serif" font-size="6" font-weight="normal">
+    ÉGALITÉ
+  </text>
+  <text x="75" y="50" fill="white" font-family="Arial, sans-serif" font-size="6" font-weight="normal">
+    FRATERNITÉ
+  </text>
+  
+  <!-- Lignes décoratives -->
+  <line x1="10" y1="55" x2="110" y2="55" stroke="white" stroke-width="0.5"/>
+  <line x1="10" y1="65" x2="110" y2="65" stroke="white" stroke-width="0.5"/>
+  
+  <!-- Année -->
+  <text x="10" y="72" fill="white" font-family="Arial, sans-serif" font-size="5">
+    MINISTÈRE DE L'ÉDUCATION NATIONALE
+  </text>
+</svg>

@@ -1,0 +1,8 @@
+Ce dossier contiendra les images du carousel.
+
+Vous pouvez ajouter vos propres images :
+- lycee-facade.jpg
+- classe-moderne.jpg 
+- laboratoire-sciences.jpg
+
+Format recommandé : 1920x500px ou ratio 16:9
