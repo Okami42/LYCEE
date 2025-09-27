@@ -99,7 +99,10 @@ export default function Header() {
                 className="h-20 w-auto"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
-                  e.currentTarget.nextElementSibling!.style.display = 'flex';
+                  const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                  if (nextElement) {
+                    nextElement.style.display = 'flex';
+                  }
                 }}
               />
               <div className="w-20 h-16 bg-blue-900 rounded-lg flex items-center justify-center" style={{display: 'none'}}>
