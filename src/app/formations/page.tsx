@@ -99,44 +99,44 @@ export default function Formations() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-lg border border-orange-200">
+              <div className="bg-gradient-to-br from-green-50 to-teal-50 p-8 rounded-lg border border-green-200">
                 <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-orange-600 rounded-lg flex items-center justify-center mr-4">
-                    <Microscope className="h-8 w-8 text-white" />
+                  <div className="w-16 h-16 bg-green-600 rounded-lg flex items-center justify-center mr-4">
+                    <Users className="h-8 w-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold text-slate-900">STI2D</h3>
-                    <p className="text-slate-600">Sciences et Technologies de l'Industrie et du Développement Durable</p>
+                    <h3 className="text-2xl font-semibold text-slate-900">ST2S</h3>
+                    <p className="text-slate-600">Sciences et Technologies de la Santé et du Social</p>
                   </div>
                 </div>
                 
                 <p className="text-slate-700 mb-6">
-                  Formation axée sur l'innovation technologique et le développement durable, 
-                  préparant aux métiers de l'ingénierie et des nouvelles technologies.
+                  Formation axée sur les secteurs de la santé et du social, 
+                  préparant aux métiers du paramédical, du social et de l'animation.
                 </p>
                 
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-orange-600 mr-3" />
-                    <span className="text-slate-700">Innovation technologique et éco-conception</span>
+                    <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
+                    <span className="text-slate-700">Sciences sanitaires et sociales</span>
                   </div>
                   <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-orange-600 mr-3" />
-                    <span className="text-slate-700">Systèmes d'information et numérique</span>
+                    <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
+                    <span className="text-slate-700">Biologie et physiopathologie humaines</span>
                   </div>
                   <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-orange-600 mr-3" />
-                    <span className="text-slate-700">Énergies et environnement</span>
+                    <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
+                    <span className="text-slate-700">Chimie, biologie et physiopathologie</span>
                   </div>
                   <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-orange-600 mr-3" />
-                    <span className="text-slate-700">Architecture et construction</span>
+                    <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
+                    <span className="text-slate-700">Politiques de santé et action sociale</span>
                   </div>
                 </div>
                 
                 <Link
-                  href="/formations/sti2d"
-                  className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
+                  href="/formations/st2s"
+                  className="inline-flex items-center text-green-600 hover:text-green-700 font-medium"
                 >
                   En savoir plus <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
