@@ -200,17 +200,13 @@ export default function Formations() {
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
                 Options Facultatives
               </h2>
-              <p className="text-xl text-slate-600">
-                Enrichissez votre parcours avec nos options
-              </p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {[
-                'Latin', 'Grec ancien', 'Chinois LV3', 'Italien LV3', 'Arabe LV3',
-                'Arts plastiques', 'Musique', 'Théâtre', 'Cinéma-audiovisuel',
-                'EPS complémentaire', 'Mathématiques expertes', 'Mathématiques complémentaires',
-                'Droit et grands enjeux', 'Section européenne', 'Atelier artistique'
+                'Latin', 'Grec ancien', 'Russe LV3', 'Italien LV3', 
+                'Mathématiques expertes', 'Mathématiques complémentaires',
+                'Droit et grands enjeux', 'Section européenne'
               ].map((option, index) => (
                 <div key={index} className="bg-white p-4 rounded-lg shadow-sm text-center">
                   <h4 className="font-medium text-slate-900 text-sm">{option}</h4>
