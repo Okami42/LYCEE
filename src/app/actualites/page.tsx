@@ -5,17 +5,6 @@ import { Calendar, ArrowRight, Bell, Clock } from 'lucide-react';
 // Données des articles (du plus récent au plus ancien)
 const articles = [
   {
-    id: 'date-et-organisation-rentree-2025',
-    title: 'Date et organisation rentrée 2025',
-    excerpt: 'Toutes les informations importantes concernant l\'organisation de la rentrée scolaire 2025. Rendez-vous le lundi 1er septembre !',
-    date: '2025-06-20',
-    dateFormatted: '20 juin 2025',
-    category: 'Rentrée scolaire',
-    categoryColor: 'bg-emerald-100 text-emerald-800',
-    image: 'https://lgt-pierre-de-la-ramee-saint-quentin.02.ac-amiens.fr/wp-content/uploads/sites/40/2025/06/20250620_113207-2048x1193.jpg',
-    featured: true
-  },
-  {
     id: 'un-peu-de-revisions-pour-lentree-en-terminale-spe-maths',
     title: 'Un peu de révisions pour l\'entrée en Terminale Spé Maths',
     excerpt: 'Chers futurs élèves de terminale Spé Maths, voici un petit livret récapitulant les bases à maîtriser pour une entrée sereine.',
@@ -38,27 +27,16 @@ const articles = [
     featured: false
   },
   {
-    id: 'portes-ouvertes',
-    title: 'Journées Portes Ouvertes 2025',
-    excerpt: 'Venez découvrir notre établissement le samedi 16 mars 2025 de 9h à 17h. Rencontrez nos équipes et visitez nos installations.',
-    date: '2024-09-10',
-    dateFormatted: '10 septembre 2024',
-    category: 'Événements',
-    categoryColor: 'bg-purple-100 text-purple-800',
-    image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=300&fit=crop&auto=format',
+    id: 'date-et-organisation-rentree-2025',
+    title: 'Date et organisation rentrée 2025',
+    excerpt: 'Toutes les informations importantes concernant l\'organisation de la rentrée scolaire 2025. Rendez-vous le lundi 1er septembre !',
+    date: '2025-06-20',
+    dateFormatted: '20 juin 2025',
+    category: 'Rentrée scolaire',
+    categoryColor: 'bg-emerald-100 text-emerald-800',
+    image: 'https://lycee.bonne-terre.fr/wp-content/uploads/2025/07/rentree-2025-940x675.png',
     featured: false
   },
-  {
-    id: 'resultats-bac',
-    title: 'Résultats du Baccalauréat 2024',
-    excerpt: 'Nos élèves ont obtenu d\'excellents résultats avec 95% de réussite au baccalauréat. Félicitations à tous !',
-    date: '2024-09-05',
-    dateFormatted: '5 septembre 2024',
-    category: 'Résultats',
-    categoryColor: 'bg-orange-100 text-orange-800',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=300&fit=crop&auto=format',
-    featured: false
-  }
 ];
 
 export default function ActualitesPage() {
@@ -74,9 +52,6 @@ export default function ActualitesPage() {
             <Bell className="h-12 w-12 mr-4" />
             <h1 className="text-4xl md:text-5xl font-bold">Actualités du lycée</h1>
           </div>
-          <p className="text-xl text-center text-blue-100 max-w-2xl mx-auto">
-            Retrouvez toutes les dernières informations et événements du Lycée Pierre de La Ramée
-          </p>
         </div>
       </div>
 

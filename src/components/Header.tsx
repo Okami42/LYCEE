@@ -54,13 +54,10 @@ export default function Header() {
       ]
     },
     { 
-      name: 'Vie du Lycée', 
-      href: '/vie-lycee',
+      name: 'Actualités', 
+      href: '/actualites',
       submenu: [
-        { name: 'Vie Scolaire', href: '/vie-lycee/vie-scolaire' },
-        { name: 'CDI', href: '/vie-lycee/cdi' },
-        { name: 'Associations', href: '/vie-lycee/associations' },
-        { name: 'Clubs et Activités', href: '/vie-lycee/clubs' },
+        { name: 'Actualités', href: '/actualites' },
       ]
     },
     { 

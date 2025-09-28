@@ -98,96 +98,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Navigation rapide */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-slate-900">
-            Accès rapide
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Link href="/formations" className="group">
-              <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-blue-500 group-hover:border-blue-600 transform hover:scale-105">
-                <BookOpen className="h-14 w-14 text-blue-600 mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-2xl font-bold mb-4 text-slate-900">Formations</h3>
-                <p className="text-slate-600 text-lg leading-relaxed">
-                  Découvrez nos filières générales et technologiques, nos spécialités et options.
-                </p>
-              </div>
-            </Link>
 
-            <Link href="/vie-lycee" className="group">
-              <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-green-500 group-hover:border-green-600 transform hover:scale-105">
-                <Users className="h-14 w-14 text-green-600 mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-2xl font-bold mb-4 text-slate-900">Vie du Lycée</h3>
-                <p className="text-slate-600 text-lg leading-relaxed">
-                  Vie scolaire, CDI, associations, clubs et toutes les activités de l'établissement.
-                </p>
-              </div>
-            </Link>
-
-            <Link href="/restauration" className="group">
-              <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-orange-500 group-hover:border-orange-600 transform hover:scale-105">
-                <ChefHat className="h-14 w-14 text-orange-600 mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-2xl font-bold mb-4 text-slate-900">Restauration</h3>
-                <p className="text-slate-600 text-lg leading-relaxed">
-                  Menus de la semaine, tarifs et modalités d'inscription à la demi-pension.
-                </p>
-              </div>
-            </Link>
-
-            <Link href="/inscriptions" className="group">
-              <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-purple-500 group-hover:border-purple-600 transform hover:scale-105">
-                <FileText className="h-14 w-14 text-purple-600 mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-2xl font-bold mb-4 text-slate-900">Inscriptions</h3>
-                <p className="text-slate-600 text-lg leading-relaxed">
-                  Modalités d'admission, dossiers à télécharger et calendrier des inscriptions.
-                </p>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-
-      {/* Services numériques */}
+      {/* Liens utiles */}
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-slate-900">
-            Services numériques
+            Liens utiles
           </h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <a href="https://ent.ac-amiens.fr" target="_blank" rel="noopener noreferrer" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center group">
-              <div className="w-16 h-16 bg-blue-600 rounded-lg mx-auto mb-4 flex items-center justify-center group-hover:bg-blue-700 transition-colors">
-                <span className="text-white font-bold text-xl">ENT</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <a href="https://connexion.enthdf.fr" target="_blank" rel="noopener noreferrer" className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group transform hover:scale-105 overflow-hidden">
+              <div className="h-48 relative overflow-hidden bg-gradient-to-br from-green-500 to-blue-600">
+                <Image 
+                  src="https://leconomieetmoi.fr/wp-content/uploads/2023/10/enthdf.jpg" 
+                  alt="ENT - Espace numérique de travail"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300 opacity-70"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-center justify-center">
+                  <Globe className="h-16 w-16 text-white drop-shadow-lg" />
+                </div>
               </div>
-              <h3 className="font-semibold mb-2">Mon lycée.net</h3>
-              <p className="text-sm text-slate-600">Espace numérique de travail</p>
+              <div className="p-8 text-center">
+                <h3 className="text-2xl font-bold mb-3 text-slate-900">ENT</h3>
+                <p className="text-slate-600 text-lg">Espace numérique de travail</p>
+              </div>
             </a>
 
-            <a href="#" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center group">
-              <div className="w-16 h-16 bg-green-600 rounded-lg mx-auto mb-4 flex items-center justify-center group-hover:bg-green-700 transition-colors">
-                <span className="text-white font-bold text-xl">P</span>
+            <a href="https://0020049t.esidoc.fr" className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group transform hover:scale-105 overflow-hidden">
+              <div className="h-48 relative overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600">
+                <Image 
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2YjZchnYJHf4R8DesNEPCFMrrKUVeqEWMjQ&s" 
+                  alt="ESIDOC - Portail du CDI"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300 opacity-70"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-center justify-center">
+                  <BookOpen className="h-16 w-16 text-white drop-shadow-lg" />
+                </div>
               </div>
-              <h3 className="font-semibold mb-2">Pronote</h3>
-              <p className="text-sm text-slate-600">Notes et cahier de textes</p>
+              <div className="p-8 text-center">
+                <h3 className="text-2xl font-bold mb-3 text-slate-900">ESIDOC</h3>
+                <p className="text-slate-600 text-lg">Portail du CDI</p>
+              </div>
             </a>
 
-            <a href="#" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center group">
-              <div className="w-16 h-16 bg-purple-600 rounded-lg mx-auto mb-4 flex items-center justify-center group-hover:bg-purple-700 transition-colors">
-                <BookOpen className="h-8 w-8 text-white" />
+            <a href="https://espacenumerique.turbo-self.com/Connexion.aspx?id=426" className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group transform hover:scale-105 overflow-hidden">
+              <div className="h-48 relative overflow-hidden bg-gradient-to-br from-orange-500 to-red-600">
+                <Image 
+                  src="https://espacenumerique.turbo-self.com/images/1447_426.jpg" 
+                  alt="Turboself - Gestion de la restauration"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300 opacity-70"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-center justify-center">
+                  <ChefHat className="h-16 w-16 text-white drop-shadow-lg" />
+                </div>
               </div>
-              <h3 className="font-semibold mb-2">e-sidoc</h3>
-              <p className="text-sm text-slate-600">Portail du CDI</p>
-            </a>
-
-            <a href="#" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center group">
-              <div className="w-16 h-16 bg-orange-600 rounded-lg mx-auto mb-4 flex items-center justify-center group-hover:bg-orange-700 transition-colors">
-                <GraduationCap className="h-8 w-8 text-white" />
+              <div className="p-8 text-center">
+                <h3 className="text-2xl font-bold mb-3 text-slate-900">Turboself</h3>
+                <p className="text-slate-600 text-lg">Gestion de la restauration</p>
               </div>
-              <h3 className="font-semibold mb-2">Folios</h3>
-              <p className="text-sm text-slate-600">Parcours d'orientation</p>
             </a>
           </div>
         </div>
