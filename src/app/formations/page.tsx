@@ -211,15 +211,7 @@ export default function Formations() {
               ))}
             </div>
 
-            <div className="text-center mt-8">
-              <Link
-                href="/formations/options"
-                className="inline-flex items-center px-6 py-3 bg-slate-600 hover:bg-slate-700 text-white font-semibold rounded-lg transition-colors"
-              >
-                Découvrir toutes les options
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </div>
+          
           </div>
         </div>
       </section>
