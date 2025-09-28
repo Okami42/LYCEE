@@ -11,9 +11,6 @@ export default function Formations() {
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
               Nos Formations
             </h1>
-            <p className="text-xl text-purple-100">
-              Un large choix de parcours pour construire votre avenir
-            </p>
           </div>
         </div>
       </section>
