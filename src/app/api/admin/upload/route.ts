@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getIronSession } from 'iron-session';
 import { sessionOptions, SessionData } from '@/lib/session';
-import { writeFile, mkdir } from 'fs/promises';
-import path from 'path';
+import { put } from '@vercel/blob';
 import { cookies } from 'next/headers';
 
 // Middleware pour vérifier l'authentification
@@ -35,40 +34,31 @@ export async function POST(request: NextRequest) {
     // Créer un nom de fichier unique
     const timestamp = Date.now();
     const originalName = file.name;
-    const extension = path.extname(originalName);
-    const baseName = path.basename(originalName, extension);
-    const safeBaseName = baseName
+    const safeFileName = originalName
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-z0-9]+/gi, '-')
+      .replace(/[^a-z0-9.]+/gi, '-')
       .toLowerCase();
-    const fileName = `${timestamp}-${safeBaseName}${extension}`;
+    const fileName = `${timestamp}-${safeFileName}`;
 
-    // Déterminer le dossier de destination
+    // Déterminer le préfixe selon le type
     const type = formData.get('type') as string || 'other';
-    let uploadDir = 'public/uploads';
+    let prefix = 'uploads';
     
     if (type === 'image') {
-      uploadDir = 'public/images/uploads';
+      prefix = 'images';
     } else if (type === 'document') {
-      uploadDir = 'public/documents/uploads';
+      prefix = 'documents';
     }
 
-    // Créer le dossier s'il n'existe pas
-    await mkdir(uploadDir, { recursive: true });
-
-    // Sauvegarder le fichier
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-    const filePath = path.join(uploadDir, fileName);
-    await writeFile(filePath, buffer);
-
-    // Retourner l'URL publique
-    const publicPath = filePath.replace('public', '');
+    // Upload vers Vercel Blob (fonctionne pour images ET documents)
+    const blob = await put(`${prefix}/${fileName}`, file, {
+      access: 'public',
+    });
     
     return NextResponse.json({
       success: true,
-      url: publicPath,
+      url: blob.url,
       fileName: originalName
     });
   } catch (error) {
