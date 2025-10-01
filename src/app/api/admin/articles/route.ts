@@ -14,7 +14,7 @@ async function checkAuth() {
 // GET - Récupérer tous les articles
 export async function GET(request: NextRequest) {
   try {
-    const articles = getAllArticles();
+    const articles = await getAllArticles();
     return NextResponse.json({ articles });
   } catch (error) {
     console.error('Get articles error:', error);
@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
       year: 'numeric'
     }).format(date);
     
-    saveArticle(articleData);
+    await saveArticle(articleData);
     
     return NextResponse.json({ success: true, article: articleData });
   } catch (error) {

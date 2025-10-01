@@ -1,3 +1,4 @@
+import { kv } from '@vercel/kv';
 import fs from 'fs';
 import path from 'path';
 
@@ -22,33 +23,51 @@ export interface Article {
   };
 }
 
-const articlesFilePath = path.join(process.cwd(), 'data', 'articles.json');
+const ARTICLES_KEY = 'articles';
 
-// S'assurer que le dossier data existe
-function ensureDataDirectory() {
-  const dataDir = path.join(process.cwd(), 'data');
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
+// Fonction pour charger les articles initiaux depuis le fichier JSON (migration)
+async function loadInitialArticles() {
+  try {
+    const articlesFilePath = path.join(process.cwd(), 'data', 'articles.json');
+    if (fs.existsSync(articlesFilePath)) {
+      const data = fs.readFileSync(articlesFilePath, 'utf-8');
+      return JSON.parse(data) as Article[];
+    }
+  } catch (error) {
+    console.log('No initial articles file found or error reading it:', error);
   }
-  if (!fs.existsSync(articlesFilePath)) {
-    fs.writeFileSync(articlesFilePath, JSON.stringify([], null, 2));
+  return [];
+}
+
+export async function getAllArticles(): Promise<Article[]> {
+  try {
+    // Essayer de récupérer depuis KV
+    const articles = await kv.get<Article[]>(ARTICLES_KEY);
+    
+    // Si pas d'articles dans KV, charger depuis le fichier JSON (première fois)
+    if (!articles || articles.length === 0) {
+      const initialArticles = await loadInitialArticles();
+      if (initialArticles.length > 0) {
+        await kv.set(ARTICLES_KEY, initialArticles);
+        return initialArticles;
+      }
+    }
+    
+    return articles || [];
+  } catch (error) {
+    console.error('Error getting articles from KV:', error);
+    // Fallback: essayer de lire depuis le fichier local
+    return await loadInitialArticles();
   }
 }
 
-export function getAllArticles(): Article[] {
-  ensureDataDirectory();
-  const data = fs.readFileSync(articlesFilePath, 'utf-8');
-  return JSON.parse(data) as Article[];
-}
-
-export function getArticleById(id: string): Article | null {
-  const articles = getAllArticles();
+export async function getArticleById(id: string): Promise<Article | null> {
+  const articles = await getAllArticles();
   return articles.find(article => article.id === id) || null;
 }
 
-export function saveArticle(article: Article): void {
-  ensureDataDirectory();
-  const articles = getAllArticles();
+export async function saveArticle(article: Article): Promise<void> {
+  const articles = await getAllArticles();
   const existingIndex = articles.findIndex(a => a.id === article.id);
   
   if (existingIndex >= 0) {
@@ -57,19 +76,18 @@ export function saveArticle(article: Article): void {
     articles.unshift(article); // Ajouter au début (plus récent)
   }
   
-  fs.writeFileSync(articlesFilePath, JSON.stringify(articles, null, 2));
+  await kv.set(ARTICLES_KEY, articles);
 }
 
-export function deleteArticle(id: string): boolean {
-  ensureDataDirectory();
-  const articles = getAllArticles();
+export async function deleteArticle(id: string): Promise<boolean> {
+  const articles = await getAllArticles();
   const filteredArticles = articles.filter(a => a.id !== id);
   
   if (filteredArticles.length === articles.length) {
     return false; // Article non trouvé
   }
   
-  fs.writeFileSync(articlesFilePath, JSON.stringify(filteredArticles, null, 2));
+  await kv.set(ARTICLES_KEY, filteredArticles);
   return true;
 }
 

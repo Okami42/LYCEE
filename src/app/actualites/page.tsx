@@ -4,7 +4,7 @@ import { Calendar, ArrowRight, Bell, Clock } from 'lucide-react';
 import { getAllArticles } from '@/lib/articles';
 
 export default async function ActualitesPage() {
-  const articles = getAllArticles();
+  const articles = await getAllArticles();
   const featuredArticle = articles.find(article => article.featured);
   const regularArticles = articles.filter(article => !article.featured);
 

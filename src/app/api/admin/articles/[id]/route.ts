@@ -18,7 +18,7 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
-    const article = getArticleById(id);
+    const article = await getArticleById(id);
     
     if (!article) {
       return NextResponse.json(
@@ -52,7 +52,7 @@ export async function DELETE(
     }
 
     const { id } = await params;
-    const success = deleteArticle(id);
+    const success = await deleteArticle(id);
     
     if (!success) {
       return NextResponse.json(

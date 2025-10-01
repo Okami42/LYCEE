@@ -5,7 +5,7 @@ import { getArticleById, getAllArticles } from '@/lib/articles';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
-  const articles = getAllArticles();
+  const articles = await getAllArticles();
   return articles.map((article) => ({
     slug: article.id,
   }));
@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const article = getArticleById(slug);
+  const article = await getArticleById(slug);
 
   if (!article) {
     notFound();
