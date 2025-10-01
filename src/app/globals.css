@@ -107,9 +107,10 @@
 .ProseMirror img {
   max-width: 100%;
   height: auto;
-  border-radius: 0.5em;
+  border-radius: 0.75rem;
   margin: 1em 0;
   cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Styles pour les images redimensionnables */
@@ -186,6 +187,14 @@
 .prose span[style*="color"],
 .prose li[style*="color"] {
   /* Les couleurs inline sont préservées et prioritaires */
+}
+
+/* Style des images dans les articles publiés */
+.prose img {
+  border-radius: 0.75rem !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
 }
 
 .prose h1,
