@@ -4,6 +4,9 @@ import { Calendar, ArrowLeft, FileText, Download } from 'lucide-react';
 import { getArticleById, getAllArticles } from '@/lib/articles';
 import { notFound } from 'next/navigation';
 
+// Rendu dynamique : les articles se mettent à jour automatiquement
+export const dynamic = 'force-dynamic';
+
 export async function generateStaticParams() {
   const articles = await getAllArticles();
   return articles.map((article) => ({

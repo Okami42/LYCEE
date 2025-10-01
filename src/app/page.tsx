@@ -3,6 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Carousel from '@/components/Carousel';
 
+// Rendu dynamique : la page d'accueil affiche toujours les derniers articles
+export const dynamic = 'force-dynamic';
+
 export default function Home() {
   return (
     <div className="bg-white">

@@ -3,6 +3,9 @@ import Image from 'next/image';
 import { Calendar, ArrowRight, Bell, Clock } from 'lucide-react';
 import { getAllArticles } from '@/lib/articles';
 
+// Rendu dynamique : les articles se mettent à jour automatiquement
+export const dynamic = 'force-dynamic';
+
 export default async function ActualitesPage() {
   const articles = await getAllArticles();
   const featuredArticle = articles.find(article => article.featured);
