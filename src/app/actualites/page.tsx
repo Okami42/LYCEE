@@ -1,45 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, ArrowRight, Bell, Clock } from 'lucide-react';
+import { getAllArticles } from '@/lib/articles';
 
-// Données des articles (du plus récent au plus ancien)
-const articles = [
-  {
-    id: 'un-peu-de-revisions-pour-lentree-en-terminale-spe-maths',
-    title: 'Un peu de révisions pour l\'entrée en Terminale Spé Maths',
-    excerpt: 'Chers futurs élèves de terminale Spé Maths, voici un petit livret récapitulant les bases à maîtriser pour une entrée sereine.',
-    date: '2025-07-29',
-    dateFormatted: '29 juillet 2025',
-    category: 'Mathématiques',
-    categoryColor: 'bg-indigo-100 text-indigo-800',
-    image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=300&fit=crop&auto=format',
-    featured: false
-  },
-  {
-    id: 'commande-groupee-calculatrice-numworks',
-    title: 'Commande groupée – Calculatrice Numworks',
-    excerpt: 'La commande groupée vous permet de faire l’acquisition d’une calculatrice NumWorks à 74,69 € au lieu de 82,99 € prix public.',
-    date: '2025-07-19',
-    dateFormatted: '19 juillet 2025',
-    category: 'Vie du lycée',
-    categoryColor: 'bg-green-100 text-green-800',
-    image: 'https://www.papeshop.fr/Files/127569/Img/02/NUMWORKS_2-zoom.jpg',
-    featured: false
-  },
-  {
-    id: 'date-et-organisation-rentree-2025',
-    title: 'Date et organisation rentrée 2025',
-    excerpt: 'Toutes les informations importantes concernant l\'organisation de la rentrée scolaire 2025. Rendez-vous le lundi 1er septembre !',
-    date: '2025-06-20',
-    dateFormatted: '20 juin 2025',
-    category: 'Rentrée scolaire',
-    categoryColor: 'bg-emerald-100 text-emerald-800',
-    image: 'https://lycee.bonne-terre.fr/wp-content/uploads/2025/07/rentree-2025-940x675.png',
-    featured: false
-  },
-];
-
-export default function ActualitesPage() {
+export default async function ActualitesPage() {
+  const articles = getAllArticles();
   const featuredArticle = articles.find(article => article.featured);
   const regularArticles = articles.filter(article => !article.featured);
 
@@ -91,7 +56,7 @@ export default function ActualitesPage() {
                     {featuredArticle.title}
                   </h3>
                   
-                  <p className="text-slate-700 text-lg leading-relaxed mb-6">
+                  <p className="text-slate-900 text-lg leading-relaxed mb-6">
                     {featuredArticle.excerpt}
                   </p>
                   
@@ -151,7 +116,7 @@ export default function ActualitesPage() {
                     {article.title}
                   </h3>
                   
-                  <p className="text-slate-600 mb-4 line-clamp-3">
+                  <p className="text-slate-900 mb-4 line-clamp-3">
                     {article.excerpt}
                   </p>
                   

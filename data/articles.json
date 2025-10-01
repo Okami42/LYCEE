@@ -1,0 +1,69 @@
+[
+  {
+    "title": "oui",
+    "excerpt": "ouiiii",
+    "content": "<div class=\"custom-box\" style=\"background-color: rgb(248, 250, 252); border: 1px solid rgb(203, 213, 225); border-radius: 0.5rem; padding: 1rem; margin: 1rem 0px;\"><p><span style=\"color: rgb(234, 88, 12);\">okokokokokok</span></p></div><blockquote><p><em>merci a lui</em></p><div class=\"custom-box\" style=\"background-color: rgb(248, 250, 252); border: 1px solid rgb(203, 213, 225); border-radius: 0.5rem; padding: 1rem; margin: 1rem 0px;\"><p>MERCI&nbsp;</p></div></blockquote><p></p>",
+    "category": "Vie du lycée",
+    "categoryColor": "bg-blue-100 text-blue-800",
+    "image": "https://sitechecker.pro/wp-content/uploads/2023/05/URL-meaning.jpg",
+    "featured": false,
+    "files": [],
+    "author": {
+      "name": "S plutot",
+      "title": "prof de francais"
+    },
+    "id": "oui",
+    "date": "2025-10-01",
+    "dateFormatted": "1 octobre 2025"
+  },
+  {
+    "id": "un-peu-de-revisions-pour-lentree-en-terminale-spe-maths",
+    "title": "Un peu de révisions pour l'entrée en Terminale Spé Maths",
+    "excerpt": "Chers futurs élèves de terminale Spé Maths, voici un petit livret récapitulant les bases à maîtriser pour une entrée sereine.",
+    "content": "\n      <p>Chers futurs élèves de terminale Spé Maths,</p>\n      <p>Voici un petit livret récapitulant les bases à maîtriser pour une entrée sereine en terminale spécialité mathématiques.</p>\n      <h2>Objectif</h2>\n      <p>Ce document vous permettra de réviser les notions essentielles vues en première et de vous préparer au mieux pour la terminale.</p>\n      <h2>Contenu du livret</h2>\n      <ul>\n        <li>Rappels sur les fonctions</li>\n        <li>Dérivation</li>\n        <li>Suites numériques</li>\n        <li>Probabilités</li>\n        <li>Géométrie dans l'espace</li>\n      </ul>\n      <p>Bon courage pour vos révisions et excellente rentrée !</p>\n    ",
+    "date": "2025-07-29",
+    "dateFormatted": "29 juillet 2025",
+    "category": "Mathématiques",
+    "categoryColor": "bg-indigo-100 text-indigo-800",
+    "image": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=300&fit=crop&auto=format",
+    "featured": false,
+    "files": [
+      {
+        "name": "TG-Bases-pour-lentree-en-spe-maths-S.-Pluot-1.pdf",
+        "url": "/documents/TG-Bases-pour-lentree-en-spe-maths-S.-Pluot-1.pdf"
+      },
+      {
+        "name": "TG-Correction-bases-SPE-MATHS-S.-Pluot.pdf",
+        "url": "/documents/TG-Correction-bases-SPE-MATHS-S.-Pluot.pdf"
+      }
+    ],
+    "author": {
+      "name": "S. Pluot",
+      "title": "Professeur de Mathématiques"
+    }
+  },
+  {
+    "id": "commande-groupee-calculatrice-numworks",
+    "title": "Commande groupée – Calculatrice Numworks",
+    "excerpt": "La commande groupée vous permet de faire l'acquisition d'une calculatrice NumWorks à 74,69 € au lieu de 82,99 € prix public.",
+    "content": "<blockquote><p><strong>Offre spéciale pour nos élèves !</strong></p><p>Tous les ans, nous proposons une commande groupée de calculatrices NumWorks à un prix préférentiel.</p><h3>Prix avantageux</h3><p>Prix public : <del>82,99 €</del></p><p><strong>Prix groupé : 74,69 €</strong></p><p style=\"color: #16a34a; font-weight: 600;\">Économie : 8,30 €</p><p><strong>Nous sommes habitués, en classe, à travailler sur ce modèle.</strong></p></blockquote><h2 style=\"text-align: center;\">Comment commander ?</h2><p style=\"text-align: center;\">Rien de plus simple ! Scannez le QR code ci-dessous ou cliquez sur le lien.</p><p style=\"text-align: center;\"><img src=\"/images/qr-code-numworks.png\" alt=\"QR Code Numworks\" style=\"max-width: 250px; margin: 0 auto;\"></p><p style=\"text-align: center;\"><strong>ou</strong></p><p style=\"text-align: center;\"><a href=\"https://my.numworks.com/group_orders/i3CbwC\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"background-color: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: 600;\">👉 Cliquez sur le lien</a></p><h2>Étapes de commande</h2><p><strong>1️⃣ Renseignez les informations</strong></p><p>Renseignez les informations concernant votre enfant, en précisant le niveau : <strong>2GT</strong>, <strong>1T ou 1G</strong>, <strong>TT ou TG</strong></p><p><strong>2️⃣ Paiement sécurisé</strong></p><p>Payez directement en ligne en toute sécurité.</p><p><strong>3️⃣ Livraison au lycée</strong></p><p>Les calculatrices seront livrées au lycée et distribuées par le professeur de votre enfant peu après le <strong>11 septembre</strong> (date de fin de la commande groupée).</p><blockquote><p style=\"font-style: italic;\">\"Bel été à tous et on se rencontre en septembre, pour une belle rentrée mathématique.\"</p><p><strong>L'équipe de mathématiques</strong></p></blockquote>",
+    "date": "2025-07-19",
+    "dateFormatted": "19 juillet 2025",
+    "category": "Vie du lycée",
+    "categoryColor": "bg-green-100 text-green-800",
+    "image": "https://je-progresse-en-maths.fr/wp-content/uploads/2023/08/numworks-calculatrice.jpg",
+    "featured": false
+  },
+  {
+    "id": "date-et-organisation-rentree-2025",
+    "title": "Date et organisation rentrée 2025",
+    "excerpt": "Toutes les informations importantes concernant l'organisation de la rentrée scolaire 2025. Rendez-vous le lundi 1er septembre !",
+    "content": "\n      <h2>Informations générales</h2>\n      <p>La rentrée scolaire 2025 aura lieu le <strong>lundi 1er septembre 2025</strong>.</p>\n      \n      <h2>Organisation par niveau</h2>\n      \n      <h3>Seconde</h3>\n      <ul>\n        <li>Accueil à 8h00</li>\n        <li>Appel et constitution des classes</li>\n        <li>Distribution des emplois du temps</li>\n        <li>Visite du lycée</li>\n      </ul>\n      \n      <h3>Première et Terminale</h3>\n      <ul>\n        <li>Accueil à 9h00</li>\n        <li>Distribution des emplois du temps</li>\n        <li>Début des cours à 10h00</li>\n      </ul>\n      \n      <h2>Documents à apporter</h2>\n      <ul>\n        <li>Certificat de scolarité</li>\n        <li>Photos d'identité</li>\n        <li>Attestation d'assurance scolaire</li>\n        <li>Matériel scolaire de base</li>\n      </ul>\n      \n      <blockquote>\n        <p>Nous vous souhaitons à tous une excellente rentrée scolaire 2025 !</p>\n      </blockquote>\n    ",
+    "date": "2025-06-20",
+    "dateFormatted": "20 juin 2025",
+    "category": "Rentrée scolaire",
+    "categoryColor": "bg-emerald-100 text-emerald-800",
+    "image": "https://lycee.bonne-terre.fr/wp-content/uploads/2025/07/rentree-2025-940x675.png",
+    "featured": false
+  }
+]

@@ -73,10 +73,7 @@ export default function Header() {
       name: 'Inscriptions', 
       href: '/inscriptions',
       submenu: [
-        { name: 'Admission en Seconde', href: '/inscriptions/seconde' },
-        { name: 'Admission en Première', href: '/inscriptions/premiere' },
-        { name: 'Dossiers à télécharger', href: '/inscriptions/documents' },
-        { name: 'Dates importantes', href: '/inscriptions/calendrier' },
+        { name: 'Inscriptions', href: '/inscriptions' },
       ]
     },
     { name: 'Contact', href: '/contact' },
