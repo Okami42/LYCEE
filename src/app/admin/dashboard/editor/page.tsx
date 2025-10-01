@@ -247,7 +247,7 @@ function EditorContent() {
           {/* Extrait */}
           <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-6">
             <label className="block text-sm font-semibold text-slate-700 mb-2">
-              Extrait (résumé court qui apparaîtra sur la page des actualités) *
+              Extrait (résumé court) *
             </label>
             <textarea
               value={formData.excerpt}

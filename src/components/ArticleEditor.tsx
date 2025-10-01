@@ -49,13 +49,15 @@ const Box = Node.create({
     return ['div', { class: 'custom-box', style: 'background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 0.5rem; padding: 1rem; margin: 1rem 0;' }, 0];
   },
   
-  // @ts-ignore
+  // @ts-expect-error - Custom box command typing for TipTap extension
   addCommands() {
     return {
-      setBox: () => ({ commands }: any) => {
+      // @ts-expect-error - Custom box command typing for TipTap extension
+      setBox: () => ({ commands }) => {
         return commands.wrapIn(this.name);
       },
-      unsetBox: () => ({ commands }: any) => {
+      // @ts-expect-error - Custom box command typing for TipTap extension
+      unsetBox: () => ({ commands }) => {
         return commands.lift(this.name);
       },
     };
@@ -215,9 +217,11 @@ export default function ArticleEditor({ content, onChange }: ArticleEditorProps)
         <MenuButton
           onClick={() => {
             if (editor.isActive('box')) {
-              (editor.chain().focus() as any).unsetBox().run();
+              // @ts-expect-error - Custom box command not in type definitions
+              editor.chain().focus().unsetBox().run();
             } else {
-              (editor.chain().focus() as any).setBox().run();
+              // @ts-expect-error - Custom box command not in type definitions
+              editor.chain().focus().setBox().run();
             }
           }}
           isActive={editor.isActive('box')}

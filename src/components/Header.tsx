@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 export default function Header() {
@@ -87,21 +88,14 @@ export default function Header() {
           {/* Logo and school name */}
           <Link href="/" className="flex items-center space-x-4">
             <div className="flex items-center space-x-4">
-              <img 
+              <Image 
                 src="/14313.png" 
                 alt="République Française - Liberté Égalité Fraternité" 
+                width={80}
+                height={80}
                 className="h-20 w-auto"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
-                  if (nextElement) {
-                    nextElement.style.display = 'flex';
-                  }
-                }}
+                priority
               />
-              <div className="w-20 h-16 bg-blue-900 rounded-lg flex items-center justify-center" style={{display: 'none'}}>
-                <span className="text-white font-bold text-lg">RF</span>
-              </div>
               <div>
                 <h1 className="text-xl font-bold text-slate-900 leading-tight">
                 LGT PIERRE DE LA RAMEE
