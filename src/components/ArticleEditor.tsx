@@ -108,6 +108,13 @@ export default function ArticleEditor({ content, onChange }: ArticleEditorProps)
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Mettre à jour l'éditeur quand le contenu change (pour la modification d'articles existants)
+  React.useEffect(() => {
+    if (editor && content !== editor.getHTML()) {
+      editor.commands.setContent(content);
+    }
+  }, [content, editor]);
+
   if (!editor) {
     return null;
   }
