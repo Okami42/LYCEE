@@ -1,14 +1,10 @@
 import bcrypt from 'bcryptjs';
 
-// Mot de passe par défaut: "admin123" (à changer en production)
-// Pour générer un nouveau hash: bcrypt.hashSync("votre_mot_de_passe", 10)
-const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || '$2a$10$Ww1lQzKzK1Z.2b1ZQYyJH.qHJ0VJYgDY5VNzQdQXZQYJH0VJYgDY5';
+// Hash du mot de passe admin (crypté de manière sécurisée - impossible à décrypter)
+// Le mot de passe est stocké sous forme de hash bcrypt pour des raisons de sécurité
+const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || '$2b$10$VmzA7AIKFzf9V1D5MoXnbe7Y7FD2UvfbOY/6V/wlBRyIjc6r.hNZS';
 
 export async function verifyPassword(password: string): Promise<boolean> {
-  // En développement, accepter le mot de passe simple "admin123"
-  if (process.env.NODE_ENV !== 'production' && password === 'admin123') {
-    return true;
-  }
   return bcrypt.compare(password, ADMIN_PASSWORD_HASH);
 }
 
