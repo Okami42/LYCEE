@@ -235,6 +235,55 @@
   color: #0f172a !important;
 }
 
+/* Styles pour les encadrés colorés (comme le gris mais en couleurs) */
+.prose .info-box,
+.ProseMirror .info-box {
+  background-color: #dbeafe !important;
+  border: 2px solid #3b82f6 !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  margin: 1rem 0 !important;
+}
+
+.prose .success-box,
+.ProseMirror .success-box {
+  background-color: #dcfce7 !important;
+  border: 2px solid #22c55e !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  margin: 1rem 0 !important;
+}
+
+.prose .warning-box,
+.ProseMirror .warning-box {
+  background-color: #fef3c7 !important;
+  border: 2px solid #f59e0b !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  margin: 1rem 0 !important;
+}
+
+.prose .tip-box,
+.ProseMirror .tip-box {
+  background-color: #f3e8ff !important;
+  border: 2px solid #a855f7 !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  margin: 1rem 0 !important;
+}
+
+.prose .info-box p,
+.prose .success-box p,
+.prose .warning-box p,
+.prose .tip-box p,
+.ProseMirror .info-box p,
+.ProseMirror .success-box p,
+.ProseMirror .warning-box p,
+.ProseMirror .tip-box p {
+  color: #0f172a !important;
+  margin: 0.5rem 0 !important;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

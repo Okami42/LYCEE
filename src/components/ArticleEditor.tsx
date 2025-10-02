@@ -41,24 +41,91 @@ const Box = Node.create({
   group: 'block',
   content: 'block+',
   
-  parseHTML() {
-    return [{ tag: 'div.custom-box' }];
+  addAttributes() {
+    return {
+      backgroundColor: {
+        default: 'linear-gradient(to right, #f8fafc, #f1f5f9)',
+        parseHTML: element => element.getAttribute('data-bg-color') || 'linear-gradient(to right, #f8fafc, #f1f5f9)',
+        renderHTML: attributes => {
+          return {
+            'data-bg-color': attributes.backgroundColor,
+          };
+        },
+      },
+      borderColor: {
+        default: '#cbd5e1',
+        parseHTML: element => element.getAttribute('data-border-color') || '#cbd5e1',
+        renderHTML: attributes => {
+          return {
+            'data-border-color': attributes.borderColor,
+          };
+        },
+      },
+    };
   },
   
-  renderHTML() {
-    return ['div', { class: 'custom-box', style: 'background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 0.5rem; padding: 1rem; margin: 1rem 0;' }, 0];
+  parseHTML() {
+    return [
+      { 
+        tag: 'div[data-bg-color]',
+      }
+    ];
+  },
+  
+  renderHTML({ node }) {
+    const bgColor = node.attrs.backgroundColor || 'linear-gradient(to right, #f8fafc, #f1f5f9)';
+    const borderColor = node.attrs.borderColor || '#cbd5e1';
+    return [
+      'div', 
+      { 
+        'data-bg-color': bgColor,
+        'data-border-color': borderColor,
+        style: `background: ${bgColor}; border: 1px solid ${borderColor}; border-radius: 0.5rem; padding: 1rem; margin: 1rem 0;`,
+      }, 
+      0
+    ];
   },
   
   // @ts-expect-error - Custom box command typing for TipTap extension
   addCommands() {
     return {
       // @ts-expect-error - Custom box command typing for TipTap extension
-      setBox: () => ({ commands }) => {
-        return commands.wrapIn(this.name);
+      setBox: (attributes = {}) => ({ commands, state }) => {
+        const { selection } = state;
+        const { $from, $to } = selection;
+        
+        // @ts-expect-error - attributes typing
+        const bgColor = attributes.backgroundColor || 'linear-gradient(to right, #f8fafc, #f1f5f9)';
+        // @ts-expect-error - attributes typing
+        const bdColor = attributes.borderColor || '#cbd5e1';
+        
+        // Vérifier si on est déjà dans une box
+        let inBox = false;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        state.doc.nodesBetween($from.pos, $to.pos, (node: any) => {
+          if (node.type.name === 'box') {
+            inBox = true;
+            return false;
+          }
+        });
+        
+        if (inBox) {
+          // Si on est dans une box, mettre à jour ses attributs
+          return commands.updateAttributes('box', {
+            backgroundColor: bgColor,
+            borderColor: bdColor,
+          });
+        } else {
+          // Sinon créer une nouvelle box
+          return commands.wrapIn('box', {
+            backgroundColor: bgColor,
+            borderColor: bdColor,
+          });
+        }
       },
       // @ts-expect-error - Custom box command typing for TipTap extension
       unsetBox: () => ({ commands }) => {
-        return commands.lift(this.name);
+        return commands.lift('box');
       },
     };
   },
@@ -67,7 +134,10 @@ const Box = Node.create({
 export default function ArticleEditor({ content, onChange }: ArticleEditorProps) {
   // Tous les hooks doivent être appelés en premier
   const [showColorPicker, setShowColorPicker] = React.useState(false);
+  const [showBoxColorPicker, setShowBoxColorPicker] = React.useState(false);
   const colorPickerRef = React.useRef<HTMLDivElement>(null);
+  const boxColorPickerRef = React.useRef<HTMLDivElement>(null);
+  const [, forceUpdate] = React.useReducer((x: number) => x + 1, 0);
 
   const editor = useEditor({
     extensions: [
@@ -90,6 +160,10 @@ export default function ArticleEditor({ content, onChange }: ArticleEditorProps)
     immediatelyRender: false,
     onUpdate: ({ editor }) => {
       onChange(editor.getHTML());
+      forceUpdate();
+    },
+    onSelectionUpdate: () => {
+      forceUpdate();
     },
     editorProps: {
       attributes: {
@@ -102,6 +176,9 @@ export default function ArticleEditor({ content, onChange }: ArticleEditorProps)
     const handleClickOutside = (event: MouseEvent) => {
       if (colorPickerRef.current && event.target && !colorPickerRef.current.contains(event.target as HTMLElement)) {
         setShowColorPicker(false);
+      }
+      if (boxColorPickerRef.current && event.target && !boxColorPickerRef.current.contains(event.target as HTMLElement)) {
+        setShowBoxColorPicker(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -168,6 +245,18 @@ export default function ArticleEditor({ content, onChange }: ArticleEditorProps)
     { name: 'Rose', value: '#db2777' },
   ];
 
+  const boxColors = [
+    { name: 'Gris', backgroundColor: 'linear-gradient(to right, #f8fafc, #f1f5f9)', borderColor: '#cbd5e1', previewColor: '#e2e8f0' },
+    { name: 'Rouge', backgroundColor: 'linear-gradient(to right, #fef2f2, #fee2e2)', borderColor: '#fecaca', previewColor: '#fecaca' },
+    { name: 'Orange', backgroundColor: 'linear-gradient(to right, #fff7ed, #ffedd5)', borderColor: '#fed7aa', previewColor: '#fed7aa' },
+    { name: 'Jaune', backgroundColor: 'linear-gradient(to right, #fefce8, #fef9c3)', borderColor: '#fde68a', previewColor: '#fde047' },
+    { name: 'Vert', backgroundColor: 'linear-gradient(to right, #f0fdf4, #dcfce7)', borderColor: '#bbf7d0', previewColor: '#86efac' },
+    { name: 'Bleu', backgroundColor: 'linear-gradient(to right, #eff6ff, #dbeafe)', borderColor: '#bfdbfe', previewColor: '#93c5fd' },
+    { name: 'Indigo', backgroundColor: 'linear-gradient(to right, #eef2ff, #e0e7ff)', borderColor: '#c7d2fe', previewColor: '#a5b4fc' },
+    { name: 'Violet', backgroundColor: 'linear-gradient(to right, #faf5ff, #f3e8ff)', borderColor: '#e9d5ff', previewColor: '#d8b4fe' },
+    { name: 'Rose', backgroundColor: 'linear-gradient(to right, #fdf2f8, #fce7f3)', borderColor: '#fbcfe8', previewColor: '#f9a8d4' },
+  ];
+
   return (
     <div className="border border-slate-300 rounded-lg overflow-hidden bg-white">
       {/* Menu bar */}
@@ -221,33 +310,64 @@ export default function ArticleEditor({ content, onChange }: ArticleEditorProps)
 
         <div className="w-px h-6 bg-slate-300 mx-1"></div>
 
-        <MenuButton
-          onClick={() => {
-            if (editor.isActive('box')) {
-              // @ts-expect-error - Custom box command not in type definitions
-              editor.chain().focus().unsetBox().run();
-            } else {
-              // @ts-expect-error - Custom box command not in type definitions
-              editor.chain().focus().setBox().run();
-            }
-          }}
-          isActive={editor.isActive('box')}
-          title="Encadrer"
-        >
-          <Square className="h-4 w-4" />
-        </MenuButton>
+        <div className="relative" ref={boxColorPickerRef}>
+          <button
+            onClick={() => setShowBoxColorPicker(!showBoxColorPicker)}
+            className={`p-2 rounded hover:bg-slate-100 transition-colors ${
+              editor.isActive('box') ? 'bg-blue-100 text-blue-600' : 'text-slate-700'
+            }`}
+            title="Encadrer"
+            type="button"
+          >
+            <Square className="h-4 w-4" />
+          </button>
+          
+          {showBoxColorPicker && (
+            <div className="absolute top-full left-0 mt-1 bg-white border border-slate-300 rounded-lg shadow-lg p-3 z-50 min-w-[200px] max-h-[400px] overflow-y-auto">
+              <div className="flex flex-col gap-2">
+                {boxColors.map((color) => (
+                  <button
+                    key={color.backgroundColor}
+                    onClick={() => {
+                      // @ts-expect-error - Custom box command not in type definitions
+                      editor.chain().focus().setBox({ backgroundColor: color.backgroundColor, borderColor: color.borderColor }).run();
+                      setShowBoxColorPicker(false);
+                    }}
+                    className="w-full h-10 rounded-md border-2 border-slate-200 hover:border-slate-400 transition-all cursor-pointer flex items-center px-3 gap-3"
+                    type="button"
+                  >
+                    <div 
+                      className="w-8 h-8 rounded border" 
+                      style={{ 
+                        backgroundColor: color.previewColor,
+                        borderColor: color.borderColor
+                      }}
+                    ></div>
+                    <span className="text-sm font-medium text-slate-700">{color.name}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
 
         <div className="w-px h-6 bg-slate-300 mx-1"></div>
 
         <MenuButton
-          onClick={() => editor.chain().focus().toggleBold().run()}
+          onClick={() => {
+            editor.chain().focus().toggleBold().run();
+            forceUpdate();
+          }}
           isActive={editor.isActive('bold')}
           title="Gras"
         >
           <Bold className="h-4 w-4" />
         </MenuButton>
         <MenuButton
-          onClick={() => editor.chain().focus().toggleItalic().run()}
+          onClick={() => {
+            editor.chain().focus().toggleItalic().run();
+            forceUpdate();
+          }}
           isActive={editor.isActive('italic')}
           title="Italique"
         >
