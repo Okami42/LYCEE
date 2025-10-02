@@ -39,10 +39,7 @@ export default function Header() {
       name: 'Le Lycée', 
       href: '/le-lycee',
       submenu: [
-        { name: 'Présentation', href: '/le-lycee/presentation' },
-        { name: 'Histoire', href: '/le-lycee/histoire' },
-        { name: 'Équipe de direction', href: '/le-lycee/direction' },
-        { name: 'Organigramme', href: '/le-lycee/organigramme' },
+        { name: 'Présentation', href: '#' },
       ]
     },
     { 
@@ -65,9 +62,7 @@ export default function Header() {
       name: 'Restauration', 
       href: '/restauration',
       submenu: [
-        { name: 'Menus', href: '/restauration/menus' },
-        { name: 'Tarifs', href: '/restauration/tarifs' },
-        { name: 'Inscription', href: '/restauration/inscription' },
+        { name: 'Menus', href: '#' },
       ]
     },
     { 
