@@ -55,9 +55,11 @@ export default async function ActualitesPage() {
                     <time className="text-slate-600">{featuredArticle.dateFormatted}</time>
                   </div>
                   
-                  <h3 className="text-3xl font-bold text-slate-900 mb-4 leading-tight">
-                    {featuredArticle.title}
-                  </h3>
+                  <Link href={`/actualites/${featuredArticle.id}`}>
+                    <h3 className="text-3xl font-bold text-slate-900 mb-4 leading-tight hover:text-blue-600 transition-colors cursor-pointer">
+                      {featuredArticle.title}
+                    </h3>
+                  </Link>
                   
                   <p className="text-slate-900 text-lg leading-relaxed mb-6">
                     {featuredArticle.excerpt}
@@ -115,9 +117,11 @@ export default async function ActualitesPage() {
                     <time className="text-sm text-slate-600">{article.dateFormatted}</time>
                   </div>
                   
-                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
-                    {article.title}
-                  </h3>
+                  <Link href={`/actualites/${article.id}`}>
+                    <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors cursor-pointer">
+                      {article.title}
+                    </h3>
+                  </Link>
                   
                   <p className="text-slate-900 mb-4 line-clamp-3">
                     {article.excerpt}
