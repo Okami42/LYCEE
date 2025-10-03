@@ -199,25 +199,25 @@ export default function Inscriptions() {
           {/* Content for Terminale */}
           {selectedSection === 'terminale' && (
             <div className="max-w-4xl mx-auto">
-              <div className="bg-orange-50 rounded-xl p-8">
-                <h3 className="text-2xl font-semibold mb-6 text-orange-900 text-center">
-                  Admissions Exceptionnelles en Terminale
-                </h3>
-                <div className="text-center">
-                  <AlertCircle className="h-16 w-16 text-orange-600 mx-auto mb-4" />
-                  <p className="text-lg text-black mb-6">
-                    Les inscriptions en classe de Terminale ne sont acceptées qu'en cas exceptionnel
-                    (déménagement, problème familial majeur, etc.)
+              <div className="bg-blue-50 rounded-xl p-8 mb-8">
+                <h3 className="text-2xl font-bold text-black mb-6 text-center">Inscription en Terminale Générale et Technologique</h3>
+                <div className="text-center mb-6">
+                  <p className="text-lg text-black font-semibold mb-4">
+                    Mesdames et Messieurs les responsables légaux,
                   </p>
-                  <div className="bg-white rounded-lg p-6 inline-block">
-                    <h4 className="font-semibold mb-3">Procédure spéciale :</h4>
-                    <div className="text-left space-y-2">
-                      <p className="text-black">• Entretien obligatoire avec la direction</p>
-                      <p className="text-black">• Dossier scolaire complet</p>
-                      <p className="text-black">• Justificatifs du motif exceptionnel</p>
-                      <p className="text-black">• Accord du chef d'établissement d'origine</p>
-                    </div>
-                  </div>
+                  <p className="text-black mb-4">
+                    Vous trouverez ci-dessous les documents nécessaires à l'inscription de votre enfant.
+                  </p>
+                  <p className="text-black mb-4">
+                    Veuillez télécharger, compléter et fournir tous les documents listés ci-dessous.
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <p className="text-black font-semibold">
+                    Agnès LECLERC<br />
+                    Proviseur
+                  </p>
                 </div>
               </div>
             </div>
