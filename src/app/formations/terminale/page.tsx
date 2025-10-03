@@ -128,7 +128,7 @@ export default function Terminale() {
                   Analyse critique du monde contemporain et des enjeux géopolitiques
                 </p>
                 <div className="text-xs text-purple-600 font-semibold">
-                  📝 Contrôle continu (coeff. 6)
+                  📝 Contrôle continu (coeff. 3)
                 </div>
               </div>
 
@@ -141,7 +141,7 @@ export default function Terminale() {
                   Maîtrise avancée de l'anglais : expression, compréhension, civilisation
                 </p>
                 <div className="text-xs text-purple-600 font-semibold">
-                  📝 Contrôle continu (coeff. 6)
+                  📝 Contrôle continu (coeff. 3)
                 </div>
               </div>
 
@@ -154,7 +154,7 @@ export default function Terminale() {
                   Allemand, Espagnol ou Italien : perfectionnement linguistique
                 </p>
                 <div className="text-xs text-purple-600 font-semibold">
-                  📝 Contrôle continu (coeff. 6)
+                  📝 Contrôle continu (coeff. 3)
                 </div>
               </div>
 
@@ -167,7 +167,7 @@ export default function Terminale() {
                   Culture scientifique : enjeux contemporains et démarche scientifique
                 </p>
                 <div className="text-xs text-purple-600 font-semibold">
-                  📝 Contrôle continu (coeff. 6)
+                  📝 Contrôle continu (coeff. 3)
                 </div>
               </div>
 
@@ -193,7 +193,7 @@ export default function Terminale() {
                   Enseignement moral et civique : engagement et responsabilité citoyenne
                 </p>
                 <div className="text-xs text-purple-600 font-semibold">
-                  📝 Contrôle continu (coeff. 2)
+                  📝 Contrôle continu (coeff. 1)
                 </div>
               </div>
             </div>
@@ -214,7 +214,7 @@ export default function Terminale() {
               </p>
               <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 max-w-3xl mx-auto">
                 <p className="text-purple-800 font-semibold">
-                  🎯 Coefficient 16 chacune : ces épreuves représentent 64% de votre note finale du bac !
+                  🎯 Coefficient 16 chacune
                 </p>
               </div>
             </div>
@@ -233,7 +233,7 @@ export default function Terminale() {
                   • Fonctions • Suites • Géométrie dans l'espace • Probabilités
                 </div>
                 <div className="text-xs text-blue-600 font-semibold">
-                  📅 Épreuve finale : Mars (écrit 4h)
+                  📅 Épreuve finale : Juin (écrit 4h)
                 </div>
               </div>
 
@@ -249,7 +249,7 @@ export default function Terminale() {
                   • Ondes • Mécanique • Transformations • Synthèses
                 </div>
                 <div className="text-xs text-green-600 font-semibold">
-                  📅 Épreuve finale : Mars (écrit 3h30 + TP 1h)
+                  📅 Épreuve finale : Juin (écrit 3h30 + TP 1h)
                 </div>
               </div>
 
@@ -265,7 +265,7 @@ export default function Terminale() {
                   • Génétique • Évolution • Géologie • Écosystèmes
                 </div>
                 <div className="text-xs text-emerald-600 font-semibold">
-                  📅 Épreuve finale : Mars (écrit 3h30 + TP 1h)
+                  📅 Épreuve finale : Juin (écrit 3h30 + TP 1h)
                 </div>
               </div>
 
@@ -281,7 +281,7 @@ export default function Terminale() {
                   • Algorithmes • Bases de données • Réseaux • Projets
                 </div>
                 <div className="text-xs text-purple-600 font-semibold">
-                  📅 Épreuve finale : Mars (écrit 3h30 + pratique 1h)
+                  📅 Épreuve finale : Juin (écrit 3h30 + pratique 1h)
                 </div>
               </div>
 
@@ -297,7 +297,7 @@ export default function Terminale() {
                   • Géopolitique • Diplomatie • Conflits • Puissances
                 </div>
                 <div className="text-xs text-red-600 font-semibold">
-                  📅 Épreuve finale : Mars (écrit 4h)
+                  📅 Épreuve finale : Juin (écrit 4h)
                 </div>
               </div>
 
@@ -313,23 +313,23 @@ export default function Terminale() {
                   • Littérature • Philosophie • Arts • Création
                 </div>
                 <div className="text-xs text-orange-600 font-semibold">
-                  📅 Épreuve finale : Mars (écrit 4h)
+                  📅 Épreuve finale : Juin (écrit 4h)
                 </div>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500">
                 <div className="flex items-center mb-4">
                   <Globe className="h-8 w-8 text-teal-600 mr-3" />
-                  <h3 className="text-lg font-bold text-black">LLCER Anglais</h3>
+                  <h3 className="text-lg font-bold text-black">AMC</h3>
                 </div>
                 <p className="text-gray-700 text-sm mb-3">
-                  Littérature anglophone, civilisation et traduction littéraire
+                  LLCE Anglais Monde Contemporain : approfondissement anglophone
                 </p>
                 <div className="text-xs text-slate-500 mb-2">
                   • Littérature • Civilisation • Traduction • Oral
                 </div>
                 <div className="text-xs text-teal-600 font-semibold">
-                  📅 Épreuve finale : Mars (écrit 3h30 + oral 20min)
+                  📅 Épreuve finale : Juin (écrit 3h30 + oral 20min)
                 </div>
               </div>
 
@@ -345,23 +345,23 @@ export default function Terminale() {
                   • Macroéconomie • Sociologie • Sciences politiques
                 </div>
                 <div className="text-xs text-indigo-600 font-semibold">
-                  📅 Épreuve finale : Mars (écrit 4h)
+                  📅 Épreuve finale : Juin (écrit 4h)
                 </div>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-pink-500">
                 <div className="flex items-center mb-4">
                   <Star className="h-8 w-8 text-pink-600 mr-3" />
-                  <h3 className="text-lg font-bold text-black">Arts Plastiques</h3>
+                  <h3 className="text-lg font-bold text-black">Sports</h3>
                 </div>
                 <p className="text-gray-700 text-sm mb-3">
-                  Création artistique personnelle et analyse critique des œuvres
+                  Pratique sportive approfondie et culture du sport de haut niveau
                 </p>
                 <div className="text-xs text-slate-500 mb-2">
-                  • Création • Histoire de l'art • Critique • Portfolio
+                  • Entraînement • Physiologie • Performance • Analyse sportive
                 </div>
                 <div className="text-xs text-pink-600 font-semibold">
-                  📅 Épreuve finale : Mars (pratique + oral 30min)
+                  📅 Épreuve finale : Juin (pratique + oral 30min)
                 </div>
               </div>
             </div>
@@ -440,34 +440,16 @@ export default function Terminale() {
 
             <div className="mt-12">
               <h3 className="text-xl font-bold text-black mb-6 text-center">Autres Options Facultatives</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white p-4 rounded-lg shadow-md text-center">
-                  <h4 className="font-bold text-black mb-2">Langues et Cultures</h4>
+              <div className="flex justify-center">
+                <div className="bg-white p-4 rounded-lg shadow-md text-center max-w-md w-full">
+                  <h4 className="font-bold text-black mb-2">Langues & Culture</h4>
                   <div className="text-sm text-gray-700 space-y-1">
-                    <p>• Latin (3h)</p>
-                    <p>• Grec ancien (3h)</p>
-                    <p>• LV3 : Chinois, Italien, Arabe (3h)</p>
-                    <p>• Section européenne anglais</p>
-                  </div>
-                </div>
-
-                <div className="bg-white p-4 rounded-lg shadow-md text-center">
-                  <h4 className="font-bold text-black mb-2">Arts et Expression</h4>
-                  <div className="text-sm text-gray-700 space-y-1">
-                    <p>• Arts plastiques (3h)</p>
-                    <p>• Musique (3h)</p>
-                    <p>• Théâtre (3h)</p>
-                    <p>• Cinéma-audiovisuel (3h)</p>
-                  </div>
-                </div>
-
-                <div className="bg-white p-4 rounded-lg shadow-md text-center">
-                  <h4 className="font-bold text-black mb-2">Autres</h4>
-                  <div className="text-sm text-gray-700 space-y-1">
-                    <p>• Droit et grands enjeux (3h)</p>
-                    <p>• EPS complémentaire (4h)</p>
-                    <p>• Atelier artistique</p>
-                    <p>• Préparation Sciences Po</p>
+                    <p>• Latin </p>
+                    <p>• Grec ancien </p>
+                    <p>• LV3 : Italien, Russe </p>
+                    <p>• Section européenne anglais & allemand</p>
+                    <p>• Option EPS</p>
+                    <p>• Droit et Grands Enjeux du Monde Contemporain</p>
                   </div>
                 </div>
               </div>

@@ -149,9 +149,6 @@ export default function Premiere() {
                 <p className="text-gray-700 text-sm mb-3">
                   Culture scientifique commune : mathématiques, physique, SVT, informatique
                 </p>
-                <div className="text-xs text-green-600 font-semibold">
-                  📝 Épreuve anticipée au bac
-                </div>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
@@ -280,10 +277,10 @@ export default function Premiere() {
               <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500">
                 <div className="flex items-center mb-4">
                   <Globe className="h-8 w-8 text-teal-600 mr-3" />
-                  <h3 className="text-lg font-bold text-black">LLCER Anglais</h3>
+                  <h3 className="text-lg font-bold text-black">AMC</h3>
                 </div>
                 <p className="text-gray-700 text-sm mb-3">
-                  Langues, Littératures et Cultures Étrangères : approfondissement anglophone
+                LLCE Anglais Monde Contemporain : approfondissement anglophone
                 </p>
                 <div className="text-xs text-slate-500">
                   • Littérature anglophone • Civilisation • Traduction
@@ -306,42 +303,18 @@ export default function Premiere() {
               <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-pink-500">
                 <div className="flex items-center mb-4">
                   <Star className="h-8 w-8 text-pink-600 mr-3" />
-                  <h3 className="text-lg font-bold text-black">Arts Plastiques</h3>
+                  <h3 className="text-lg font-bold text-black">Sports</h3>
                 </div>
                 <p className="text-gray-700 text-sm mb-3">
-                  Pratique artistique et culture artistique contemporaine approfondie
+                  Pratique sportive approfondie et culture du sport de haut niveau
                 </p>
                 <div className="text-xs text-slate-500">
-                  • Création artistique • Histoire de l'art • Projets
+                  • Entraînement • Physiologie • Performance • Analyse sportive
                 </div>
               </div>
             </div>
 
-            <div className="text-center mt-12">
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-4xl mx-auto">
-                <h3 className="text-xl font-bold text-black mb-4">Comment choisir ses spécialités ?</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-white font-bold">1</span>
-                    </div>
-                    <p className="text-gray-700 font-semibold">Vos goûts et aptitudes</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-white font-bold">2</span>
-                    </div>
-                    <p className="text-gray-700 font-semibold">Votre projet d'études</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-white font-bold">3</span>
-                    </div>
-                    <p className="text-gray-700 font-semibold">Les attendus Parcoursup</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+           
           </div>
         </div>
       </section>
@@ -354,14 +327,11 @@ export default function Premiere() {
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
                 Options Facultatives
               </h2>
-              <p className="text-xl text-slate-600">
-                Enrichissez votre parcours avec nos options (3h par semaine)
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-lg font-bold text-black mb-4">Langues et Cultures</h3>
+            <div className="flex justify-center">
+              <div className="bg-white p-6 rounded-lg shadow-md max-w-md w-full">
+                <h3 className="text-lg font-bold text-black mb-4">Langues & EPS</h3>
                 <div className="space-y-3">
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
@@ -373,33 +343,17 @@ export default function Premiere() {
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
-                    <span className="text-gray-700">LV3 (Chinois, Italien, Arabe)</span>
+                    <span className="text-gray-700">LV3 (Italien,Russe)</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
-                    <span className="text-gray-700">Section européenne anglais</span>
-                  </div>
-                </div>
-              </div>
+                    <span className="text-gray-700">Section européenne anglais & allemand</span>
 
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-lg font-bold text-black mb-4">Arts et Expression</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-purple-600 mr-3" />
-                    <span className="text-gray-700">Arts plastiques</span>
                   </div>
                   <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-purple-600 mr-3" />
-                    <span className="text-gray-700">Musique</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-purple-600 mr-3" />
-                    <span className="text-gray-700">Théâtre</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-purple-600 mr-3" />
-                    <span className="text-gray-700">Cinéma-audiovisuel</span>
+                    <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
+                    <span className="text-gray-700">Option EPS</span>
+                    
                   </div>
                 </div>
               </div>
@@ -408,112 +362,7 @@ export default function Premiere() {
         </div>
       </section>
 
-      {/* Accompagnement */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                Accompagnement et Orientation
-              </h2>
-              <p className="text-xl text-slate-600">
-                Un suivi personnalisé pour préparer votre réussite au bac et votre projet post-bac
-              </p>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <Award className="h-8 w-8 text-blue-600 mr-3" />
-                  <h3 className="text-xl font-bold text-black">Préparation au Bac</h3>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  Entraînements aux épreuves anticipées, méthodologie et gestion du stress
-                </p>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• Bacs blancs de français</li>
-                  <li>• Oraux d'entraînement</li>
-                  <li>• Méthodologie de l'écrit</li>
-                </ul>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <Target className="h-8 w-8 text-green-600 mr-3" />
-                  <h3 className="text-xl font-bold text-black">Projet Post-Bac</h3>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  Accompagnement dans la construction du projet d'études supérieures
-                </p>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• Découverte des formations</li>
-                  <li>• Préparation Parcoursup</li>
-                  <li>• Rencontres avec des professionnels</li>
-                </ul>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <Users className="h-8 w-8 text-purple-600 mr-3" />
-                  <h3 className="text-xl font-bold text-black">Accompagnement Personnalisé</h3>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  Soutien individualisé selon les besoins de chaque élève
-                </p>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• Aide méthodologique</li>
-                  <li>• Remédiation disciplinaire</li>
-                  <li>• Approfondissement</li>
-                </ul>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <Globe className="h-8 w-8 text-orange-600 mr-3" />
-                  <h3 className="text-xl font-bold text-black">Ouverture Internationale</h3>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  Projets d'échanges et de mobilité pour enrichir votre parcours
-                </p>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• Échanges européens</li>
-                  <li>• Certifications linguistiques</li>
-                  <li>• Projets eTwinning</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Vers la Terminale */}
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
-              Après la Première
-            </h2>
-            <p className="text-xl text-slate-600 mb-8">
-              Poursuivez votre parcours en Terminale avec 2 spécialités
-            </p>
-
-            <Link href="/formations/terminale" className="group inline-block">
-              <div className="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-lg border border-purple-200 hover:shadow-lg transition-all max-w-md mx-auto">
-                <div className="w-16 h-16 bg-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">Tle</span>
-                </div>
-                <h3 className="text-2xl font-bold text-black mb-4">Classe de Terminale</h3>
-                <p className="text-gray-700 mb-6">
-                  Approfondissement de 2 spécialités et préparation intensive au baccalauréat
-                </p>
-                <div className="flex items-center justify-center text-purple-600 font-medium group-hover:translate-x-2 transition-transform">
-                  Découvrir la Terminale <ArrowRight className="ml-2 h-4 w-4" />
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-16 bg-gradient-to-r from-green-900 to-emerald-900 text-white">
@@ -523,7 +372,7 @@ export default function Premiere() {
               Prêt pour la classe de Première ?
             </h2>
             <p className="text-xl mb-8 text-green-100">
-              Rejoignez-nous pour une année de spécialisation et de préparation à l'excellence
+              Rejoignez-nous pour une année de spécialisation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
