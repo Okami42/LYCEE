@@ -153,32 +153,46 @@ export default function Header() {
         </div>
 
         {/* Mobile navigation */}
-        {isMenuOpen && (
-          <>
-            {/* Overlay background */}
-            <div 
-              className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
-              onClick={() => setIsMenuOpen(false)}
-            />
-            {/* Menu content */}
-            <nav className="lg:hidden fixed top-20 left-0 right-0 bg-white shadow-lg z-50 max-h-96 overflow-y-auto mx-4 rounded-lg">
-              <div className="space-y-2 p-4">
+        <div className={`lg:hidden fixed inset-0 z-50 transition-all duration-300 ${isMenuOpen ? 'visible' : 'invisible'}`}>
+          {/* Overlay background */}
+          <div 
+            className={`absolute inset-0 bg-black transition-opacity duration-300 ${isMenuOpen ? 'opacity-50' : 'opacity-0'}`}
+            onClick={() => setIsMenuOpen(false)}
+          />
+          
+          {/* Menu panel */}
+          <nav className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-gradient-to-br from-blue-600 to-indigo-700 shadow-2xl transform transition-transform duration-300 ease-in-out overflow-y-auto ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            {/* Header du menu */}
+            <div className="flex items-center justify-between p-6 border-b border-white/20">
+              <h2 className="text-xl font-bold text-white">Menu</h2>
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="p-2 rounded-lg hover:bg-white/10 transition-colors"
+              >
+                <X className="h-6 w-6 text-white" />
+              </button>
+            </div>
+
+            {/* Navigation items */}
+            <div className="p-4 space-y-2">
               {navigationItems.map((item) => (
-                <div key={item.name}>
+                <div key={item.name} className="space-y-1">
                   <Link
                     href={item.href}
-                    className="block px-4 py-2 text-slate-700 hover:text-blue-900 hover:bg-slate-50 font-medium transition-colors rounded-md"
+                    className="flex items-center justify-between px-4 py-3 text-white font-semibold rounded-lg hover:bg-white/10 transition-all"
                     onClick={() => !item.submenu && setIsMenuOpen(false)}
                   >
-                    {item.name}
+                    <span>{item.name}</span>
+                    {item.submenu && <ChevronDown className="h-4 w-4" />}
                   </Link>
+                  
                   {item.submenu && (
-                    <div className="ml-4 space-y-1">
+                    <div className="ml-4 space-y-1 border-l-2 border-white/30 pl-3">
                       {item.submenu.map((subItem) => (
                         <Link
                           key={subItem.name}
                           href={subItem.href}
-                          className="block px-4 py-2 text-sm text-slate-600 hover:text-blue-900 hover:bg-slate-50 transition-colors rounded-md"
+                          className="block px-4 py-2 text-sm text-blue-100 hover:text-white hover:bg-white/10 rounded-lg transition-all"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {subItem.name}
@@ -188,10 +202,9 @@ export default function Header() {
                   )}
                 </div>
               ))}
-              </div>
-            </nav>
-          </>
-        )}
+            </div>
+          </nav>
+        </div>
       </div>
     </header>
   );
